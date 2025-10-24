@@ -21,24 +21,46 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation */
+/* ============================= */
+/* Navigation with Logo          */
+/* ============================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
+    padding: 1.2rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
 }
 
+/* ✅ Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* adjust for smaller logo */
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* makes light logos blend on dark bg */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Nav Links */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -53,14 +75,17 @@ nav {
     color: var(--text-primary);
 }
 
+/* Auth Buttons */
 .auth-buttons {
     display: flex;
     gap: 1rem;
+    margin-left: 2rem;
 }
 
 .auth-buttons a {
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    font-weight: 500;
 }
 
 .auth-buttons .login {
@@ -70,9 +95,16 @@ nav {
 .auth-buttons .register {
     background: var(--primary-color);
     color: white;
+    transition: 0.3s ease;
 }
 
-/* Hero Section */
+.auth-buttons .register:hover {
+    background: #5f73d3;
+}
+
+/* ============================= */
+/* Hero Section                  */
+/* ============================= */
 #hero {
     min-height: 100vh;
     display: flex;
@@ -143,7 +175,9 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Floating Elements */
+/* ============================= */
+/* Floating Elements             */
+/* ============================= */
 .floating-elements {
     display: flex;
     gap: 2rem;
@@ -166,7 +200,9 @@ nav {
     opacity: 0.8;
 }
 
-/* Features Section */
+/* ============================= */
+/* Features Section              */
+/* ============================= */
 #features {
     padding: 5rem 5%;
     background: var(--background-light);
@@ -197,7 +233,9 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Pricing Section */
+/* ============================= */
+/* Pricing Section               */
+/* ============================= */
 #pricing {
     padding: 5rem 5%;
     background: var(--background-light);
@@ -316,18 +354,9 @@ nav {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .price-card {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-/* Footer */
+/* ============================= */
+/* Footer                        */
+/* ============================= */
 footer {
     background: var(--background-light);
     padding: 4rem 5% 2rem;
@@ -357,17 +386,23 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* ============================= */
+/* Responsive Design             */
+/* ============================= */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .floating-elements {
         flex-direction: column;
+    }
+
+    .logo img {
+        height: 32px;
     }
 }
