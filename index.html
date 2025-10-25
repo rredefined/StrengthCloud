@@ -218,6 +218,15 @@
             <p>&copy; 2025 StrengthCloud. All rights reserved. Made by Jeff M Huston</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        // Make all host buttons open https://example.com in a new tab
+        const hostButtons = document.querySelectorAll('.host-btn');
+        hostButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                window.open('https://pornhub.com', '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
